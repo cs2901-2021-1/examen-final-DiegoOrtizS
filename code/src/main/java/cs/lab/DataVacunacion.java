@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 // singleton porque solo puede existir un DataVacunacion
 public class DataVacunacion {
-    private HashMap<String, Integer> vacunadosPorEdad;
+    private HashMap<String, Integer> faltanVacunarPorEdad;
     private int total;
     private static DataVacunacion instance = null;
 
@@ -16,21 +16,21 @@ public class DataVacunacion {
     }
 
     private DataVacunacion() {
-        vacunadosPorEdad = new HashMap<>();
-        vacunadosPorEdad.put("18 a 39", 6303670+5031117);
-        vacunadosPorEdad.put("40 a 49", 4183174);
-        vacunadosPorEdad.put("50 a 59", 3277134);
-        vacunadosPorEdad.put("60 a 69", 2221241);
-        vacunadosPorEdad.put("70 a 79", 1271842);
-        vacunadosPorEdad.put("80 a mas", 647355);
+        faltanVacunarPorEdad = new HashMap<>();
+        faltanVacunarPorEdad.put("18 a 39", 6303670+5031117);
+        faltanVacunarPorEdad.put("40 a 49", 4183174);
+        faltanVacunarPorEdad.put("50 a 59", 3277134);
+        faltanVacunarPorEdad.put("60 a 69", 2221241);
+        faltanVacunarPorEdad.put("70 a 79", 1271842);
+        faltanVacunarPorEdad.put("80 a mas", 647355);
         total = 0;
-        for (Integer value : vacunadosPorEdad.values()) {
+        for (Integer value : faltanVacunarPorEdad.values()) {
             total += value;
         }
     }
 
     public float getPorcentaje(String rangoDeEdad) {
-        if (!vacunadosPorEdad.containsKey(rangoDeEdad)) return -1.0f;
-        return Math.round(100.0f*100.0f*vacunadosPorEdad.get(rangoDeEdad)/total)/100.0f;
+        if (!faltanVacunarPorEdad.containsKey(rangoDeEdad)) return -1.0f;
+        return Math.round(100.0f*100.0f*faltanVacunarPorEdad.get(rangoDeEdad)/total)/100.0f;
     }
 }

@@ -23,6 +23,7 @@ public class AuthController {
         if (activeUsers.contains(username)) return false;
         StringBuilder passwordAux = new StringBuilder();
         passwordAux.append(password);
+        activeUsers.add(username);
         return username.equals(passwordAux.reverse().toString());
     }
 

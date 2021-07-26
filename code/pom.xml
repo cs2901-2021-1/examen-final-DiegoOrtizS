@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cs2901</groupId>
-    <artifactId>e1-sec01-examen-parcial-DiegoOrtizS</artifactId>
+    <artifactId>examen-final-DiegoOrtizS</artifactId>
     <version>0.1</version>
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <sonar.projectKey>cs2901-2021-1_e1-sec01-examen-parcial-DiegoOrtizS</sonar.projectKey>
+        <sonar.projectKey>cs2901-2021-1_examen-final-DiegoOrtizS</sonar.projectKey>
         <sonar.organization>cs2901-2021-1</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>

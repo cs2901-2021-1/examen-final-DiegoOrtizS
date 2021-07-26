@@ -15,17 +15,36 @@ public class ApplicationMain {
         String password = sc.nextLine();
         User user = new User(username, password);
         if (user.login()) {
-            logger.info("Login correcto");
+            logger.info("Login correcto [FR01]");
             while (true) {
-                logger.info("Ver porcentaje de vacunados (3): ");
-                logger.info("Salir de la aplicación (4): ");
+                logger.info("Añadir centro de vacunación (1): ");
+                logger.info("Información de centro de vacunación (2)");
+                logger.info("Ver porcentaje de no vacunados por edad (3) [FR05]: ");
+                logger.info("Salir de la aplicación (4) [FR06]: ");
                 String option = sc.nextLine();
-                if (option.equals("3")) {
+                if (option.equals("1")) {
+                    logger.info("Ingrese distrito: ");
+                    CentroVacunacionManager.getInstance().addNuevoCentro(sc.nextLine());
+                }
+                else if (option.equals("2")) {
+                    logger.info("Ingrese id de centro de vacunación: ");
+                    int id = sc.nextInt();
+                    logger.info("Dar de baja (1): ");
+                    logger.info("Dar de alta (2): ");
+                    String option2 = sc.nextLine();
+                    if (option2.equals("1")) {
+                        CentroVacunacionManager.getInstance().getCentroById(id).darDeBaja();
+                    }
+                    else if (option2.equals("2")) {
+                        CentroVacunacionManager.getInstance().getCentroById(id).darDeAlta();
+                    }
+                }
+                else if (option.equals("3")) {
                     logger.info("Ingrese rango de edad: ");
                     String rangoDeEdad = sc.nextLine();
-                    logger.info(user.getPorcentaje(rangoDeEdad).toString());
+                    logger.info(String.valueOf(user.getPorcentaje(rangoDeEdad)));
                 }
-                if (option.equals("4")) {
+                else if (option.equals("4")) {
                     user.logout();
                     break;
                 }
