@@ -43,11 +43,16 @@ public class ApplicationMain {
                         user.darDeAlta(id);
                     }
                     else if (option2.equals("3")) {
-                        logger.info(Integer.toString(CentroVacunacionManager.getInstance().getCont()));
-                        logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasParciales()));
-                        logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasCompletas()));
-                        logger.info(Float.toString(CentroVacunacionManager.getInstance().getAvance()));
-                        logger.info(Float.toString(CentroVacunacionManager.getInstance().getCobertura()));
+                        String rpta = Integer.toString(CentroVacunacionManager.getInstance().getCont());
+                        logger.info(rpta);
+                        rpta = Integer.toString(CentroVacunacionManager.getInstance().getVacunasParciales());
+                        logger.info(rpta);
+                        rpta = Integer.toString(CentroVacunacionManager.getInstance().getVacunasCompletas());
+                        logger.info(rpta);
+                        rpta = Float.toString(CentroVacunacionManager.getInstance().getAvance());
+                        logger.info(rpta);
+                        rpta = Float.toString(CentroVacunacionManager.getInstance().getCobertura());
+                        logger.info(rpta);
                     }
                 }
                 else if (option.equals("3")) {
