@@ -34,11 +34,15 @@ public class ApplicationTest
         user.darDeAlta(1);
         Assert.assertFalse(CentroVacunacionManager.getInstance().getCentroById(1).getDarBaja());
         Assert.assertNull(CentroVacunacionManager.getInstance().getCentroById(0));
+        long beg, end;
+        beg = System.currentTimeMillis();
         Assert.assertEquals(CentroVacunacionManager.getInstance().getCont(), 1);
         Assert.assertEquals(CentroVacunacionManager.getInstance().getVacunasParciales(), 10000);
         Assert.assertEquals(CentroVacunacionManager.getInstance().getVacunasCompletas(), 20000);
         Assert.assertEquals(CentroVacunacionManager.getInstance().getAvance(), 0.09f);
         Assert.assertEquals(CentroVacunacionManager.getInstance().getCobertura(), 0.06f);
+        end = System.currentTimeMillis();
+        Assert.assertTrue(((end-beg)/1000)<2);
         Assert.assertTrue(user.logout());
     }
 }
