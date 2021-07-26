@@ -57,8 +57,8 @@ public class ApplicationMain {
                 }
                 else if (option.equals("3")) {
                     logger.info("Ingrese rango de edad: ");
-                    String rangoDeEdad = sc.nextLine();
-                    logger.info(String.valueOf(user.getPorcentaje(rangoDeEdad)));
+                    String rpta = String.valueOf(user.getPorcentaje(sc.nextLine()));
+                    logger.info(rpta);
                 }
                 else if (option.equals("4")) {
                     user.logout();
