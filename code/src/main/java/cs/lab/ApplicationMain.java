@@ -42,7 +42,7 @@ public class ApplicationMain {
                     else if (option2.equals("3")) {
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getCont()));
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasParciales()));
-                        logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasParciales()));
+                        logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasCompletas()));
                     }
                 }
                 else if (option.equals("3")) {
