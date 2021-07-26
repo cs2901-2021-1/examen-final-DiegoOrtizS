@@ -4,10 +4,12 @@ import java.util.HashMap;
 
 // singleton
 public class CentroVacunacionManager {
-    HashMap<Integer, CentroVacunacion> centrosDeVacunacion;
-    private float poblacion = 32.51f*1000000;
-    private int idCont = 1;
     private static CentroVacunacionManager instance = null;
+    HashMap<Integer, CentroVacunacion> centrosDeVacunacion;
+    private float poblacion;
+    private int idCont;
+    private int contVacunasParciales;
+    private int contVacunasCompletas;
 
     public static CentroVacunacionManager getInstance()
     {
@@ -18,10 +20,14 @@ public class CentroVacunacionManager {
 
     private CentroVacunacionManager() {
         centrosDeVacunacion = new HashMap<>();
+        poblacion = 32.51f*1000000;
+        idCont = 1;
+        contVacunasParciales = 0;
+        contVacunasCompletas = 0;
     }
 
-    public void addNuevoCentro(String distrito) {
-        centrosDeVacunacion.put(idCont++, new CentroVacunacion(distrito));
+    public void addNuevoCentro(int vacunasParciales, int vacunasCompletas) {
+        centrosDeVacunacion.put(idCont++, new CentroVacunacion(vacunasParciales, vacunasCompletas));
     }
 
     public CentroVacunacion getCentroById(int id) {
@@ -33,31 +39,27 @@ public class CentroVacunacionManager {
         return idCont;
     }
 
+    public void aumentarVacunasParciales(int nuevos) {
+        contVacunasParciales += nuevos;
+    }
+
+    public void aumentarVacunasCompletas(int nuevos) {
+        contVacunasCompletas += nuevos;
+    }
+
     public int getVacunasParciales() {
-        int cont = 0;
-        for (CentroVacunacion centro : centrosDeVacunacion.values()) {
-            if (!centro.getDarBaja()) {
-                cont += centro.getVacunasParciales();
-            }
-        }
-        return cont;
+        return contVacunasParciales;
     }
 
     public int getVacunasCompletas() {
-        int cont = 0;
-        for (CentroVacunacion centro : centrosDeVacunacion.values()) {
-            if (!centro.getDarBaja()) {
-                cont += centro.getVacunasCompletas();
-            }
-        }
-        return cont;
+        return contVacunasCompletas;
     }
 
     public float getAvance() {
-        return 100.0f*getVacunasCompletas()/poblacion;
+        return Math.round((100.0f*100.0f*getVacunasParciales()+getVacunasCompletas())/poblacion)/100.0f;
     }
 
     public float getCobertura() {
-        return (100.0f*getVacunasParciales()+getVacunasCompletas())/poblacion;
+        return Math.round(100.0f*100.0f*getVacunasCompletas()/poblacion)/100.0f;
     }
 }

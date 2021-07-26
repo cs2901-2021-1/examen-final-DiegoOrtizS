@@ -23,8 +23,11 @@ public class ApplicationMain {
                 logger.info("Salir de la aplicación (4) [FR06]: ");
                 String option = sc.nextLine();
                 if (option.equals("1")) {
-                    logger.info("Ingrese distrito: ");
-                    CentroVacunacionManager.getInstance().addNuevoCentro(sc.nextLine());
+                    logger.info("Ingrese vacunados parciales: ");
+                    int vacuParciales = sc.nextInt();
+                    logger.info("Ingrese vacunados completos: ");
+                    int vacuCompletos = sc.nextInt();
+                    CentroVacunacionManager.getInstance().addNuevoCentro(vacuParciales, vacuCompletos);
                 }
                 else if (option.equals("2")) {
                     logger.info("Ingrese id de centro de vacunación: ");

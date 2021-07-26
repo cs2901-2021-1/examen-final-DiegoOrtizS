@@ -1,19 +1,14 @@
 package cs.lab;
 
-import java.util.Random;
-
 public class CentroVacunacion {
     private boolean baja;
-    private String distrito;
     private int vacunasParciales;
     private int vacunasCompletas;
 
-    public CentroVacunacion(String distrito) {
-        Random rand = new Random();
-        baja = false;
-        this.distrito = distrito;
-        vacunasParciales = rand.nextInt(1000);
-        vacunasCompletas = rand.nextInt(1000);
+    public CentroVacunacion(int vacunasParciales, int vacunasCompletas) {
+        baja = true;
+        this.vacunasParciales = vacunasParciales;
+        this.vacunasCompletas = vacunasCompletas;
     }
 
     public void darDeBaja() {
@@ -22,6 +17,11 @@ public class CentroVacunacion {
 
     public void darDeAlta() {
         baja = false;
+        // notifica al manager
+        CentroVacunacionManager.getInstance().aumentarVacunasParciales(vacunasParciales);
+        CentroVacunacionManager.getInstance().aumentarVacunasCompletas(vacunasCompletas);
+        vacunasParciales = 0;
+        vacunasCompletas = 0;
     }
 
     public boolean getDarBaja() {
