@@ -5,6 +5,7 @@ import java.util.HashMap;
 // singleton
 public class CentroVacunacionManager {
     HashMap<Integer, CentroVacunacion> centrosDeVacunacion;
+    private float poblacion = 32.51f*1000000;
     private int idCont = 1;
     private static CentroVacunacionManager instance = null;
 
@@ -50,5 +51,13 @@ public class CentroVacunacionManager {
             }
         }
         return cont;
+    }
+
+    public float getAvance() {
+        return 100.0f*getVacunasCompletas()/poblacion;
+    }
+
+    public float getCobertura() {
+        return (100.0f*getVacunasParciales()+getVacunasCompletas())/poblacion;
     }
 }
