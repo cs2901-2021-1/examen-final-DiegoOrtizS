@@ -29,8 +29,8 @@ public class DataVacunacion {
         }
     }
 
-    public Double getPorcentaje(String rangoDeEdad) {
-        if (!vacunadosPorEdad.containsKey(rangoDeEdad)) return -1.0;
-        return Math.round(100.0*100.0*vacunadosPorEdad.get(rangoDeEdad)/total)/100.0;
+    public float getPorcentaje(String rangoDeEdad) {
+        if (!vacunadosPorEdad.containsKey(rangoDeEdad)) return -1.0f;
+        return Math.round(100.0f*100.0f*vacunadosPorEdad.get(rangoDeEdad)/total)/100.0f;
     }
 }

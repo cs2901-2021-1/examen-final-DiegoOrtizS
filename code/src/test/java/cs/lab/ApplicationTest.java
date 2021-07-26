@@ -20,12 +20,12 @@ public class ApplicationTest
     {
         User user = new User("diego", "ogeid");
         Assert.assertTrue(user.login());
-        Assert.assertEquals(user.getPorcentaje("18 a 39"), 49.42);
-        Assert.assertEquals(user.getPorcentaje("40 a 49"), 18.24);
-        Assert.assertEquals(user.getPorcentaje("50 a 59"), 14.29);
-        Assert.assertEquals(user.getPorcentaje("60 a 69"), 9.68);
-        Assert.assertEquals(user.getPorcentaje("70 a 79"), 5.55);
-        Assert.assertEquals(user.getPorcentaje("80 a mas"), 2.82);
+        Assert.assertEquals(user.getPorcentaje("18 a 39"), 49.42f);
+        Assert.assertEquals(user.getPorcentaje("40 a 49"), 18.24f);
+        Assert.assertEquals(user.getPorcentaje("50 a 59"), 14.29f);
+        Assert.assertEquals(user.getPorcentaje("60 a 69"), 9.68f);
+        Assert.assertEquals(user.getPorcentaje("70 a 79"), 5.55f);
+        Assert.assertEquals(user.getPorcentaje("80 a mas"), 2.82f);
         Assert.assertTrue(user.logout());
     }
 }

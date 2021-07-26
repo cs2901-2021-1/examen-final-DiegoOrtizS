@@ -17,7 +17,7 @@ public class User {
         return AuthController.getInstance().logout(username);
     }
 
-    public Double getPorcentaje(String rangoDeEdad) {
+    public float getPorcentaje(String rangoDeEdad) {
         return DataVacunacion.getInstance().getPorcentaje(rangoDeEdad);
     }
 }
