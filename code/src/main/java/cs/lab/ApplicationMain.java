@@ -27,7 +27,7 @@ public class ApplicationMain {
                     int vacuParciales = sc.nextInt();
                     logger.info("Ingrese vacunados completos: ");
                     int vacuCompletos = sc.nextInt();
-                    CentroVacunacionManager.getInstance().addNuevoCentro(vacuParciales, vacuCompletos);
+                    user.addNuevoCentro(vacuParciales, vacuCompletos);
                 }
                 else if (option.equals("2")) {
                     logger.info("Ingrese id de centro de vacunación: ");
@@ -37,10 +37,10 @@ public class ApplicationMain {
                     logger.info("Información detalla del centromanager (3) [FR02]: ");
                     String option2 = sc.nextLine();
                     if (option2.equals("1")) {
-                        CentroVacunacionManager.getInstance().getCentroById(id).darDeBaja();
+                        user.darDeBaja(id);
                     }
                     else if (option2.equals("2")) {
-                        CentroVacunacionManager.getInstance().getCentroById(id).darDeAlta();
+                        user.darDeAlta(id);
                     }
                     else if (option2.equals("3")) {
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getCont()));

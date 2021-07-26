@@ -20,4 +20,16 @@ public class User {
     public float getPorcentaje(String rangoDeEdad) {
         return DataVacunacion.getInstance().getPorcentaje(rangoDeEdad);
     }
+
+    public void addNuevoCentro(int vacunasParciales, int vacunasCompletas) {
+        CentroVacunacionManager.getInstance().addNuevoCentro(vacunasParciales, vacunasCompletas);
+    }
+
+    public void darDeBaja(int id) {
+        CentroVacunacionManager.getInstance().getCentroById(id).darDeBaja();
+    }
+
+    public void darDeAlta(int id) {
+        CentroVacunacionManager.getInstance().getCentroById(id).darDeAlta();        
+    }
 }
