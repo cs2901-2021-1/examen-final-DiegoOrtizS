@@ -3,8 +3,6 @@ package cs.lab;
 public class User {
     private String username;
     private String password;
-    private AuthController auth = new AuthController();
-    private DataVacunacion data = new DataVacunacion();
 
     public User(String username, String password) {
         this.username = username;
@@ -12,14 +10,14 @@ public class User {
     }
 
     public boolean login() {
-        return auth.login(username, password);
+        return AuthController.getInstance().login(username, password);
     }
 
     public boolean logout() {
-        return auth.logout(username);
+        return AuthController.getInstance().logout(username);
     }
 
     public Double getPorcentaje(String rangoDeEdad) {
-        return data.getPorcentaje(rangoDeEdad);
+        return DataVacunacion.getInstance().getPorcentaje(rangoDeEdad);
     }
 }

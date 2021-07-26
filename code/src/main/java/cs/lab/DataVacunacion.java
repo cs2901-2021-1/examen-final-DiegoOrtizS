@@ -31,6 +31,6 @@ public class DataVacunacion {
 
     public Double getPorcentaje(String rangoDeEdad) {
         if (!vacunadosPorEdad.containsKey(rangoDeEdad)) return -1.0;
-        return 100.0*vacunadosPorEdad.get(rangoDeEdad)/total;
+        return Math.round(100.0*100.0*vacunadosPorEdad.get(rangoDeEdad)/total)/100.0;
     }
 }
