@@ -31,7 +31,7 @@ public class ApplicationMain {
                     int id = sc.nextInt();
                     logger.info("Dar de baja (1) [FR04]: ");
                     logger.info("Dar de alta (2) [FR03]: ");
-                    logger.info("Información detalla de centro (3) [FR02]: ");
+                    logger.info("Información detalla del centromanager (3) [FR02]: ");
                     String option2 = sc.nextLine();
                     if (option2.equals("1")) {
                         CentroVacunacionManager.getInstance().getCentroById(id).darDeBaja();
@@ -43,6 +43,8 @@ public class ApplicationMain {
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getCont()));
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasParciales()));
                         logger.info(Integer.toString(CentroVacunacionManager.getInstance().getVacunasCompletas()));
+                        logger.info(Float.toString(CentroVacunacionManager.getInstance().getAvance()));
+                        logger.info(Float.toString(CentroVacunacionManager.getInstance().getCobertura()));
                     }
                 }
                 else if (option.equals("3")) {
