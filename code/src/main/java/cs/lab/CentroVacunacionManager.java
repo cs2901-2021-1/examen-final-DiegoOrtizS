@@ -55,8 +55,10 @@ public class CentroVacunacionManager {
         return contVacunasCompletas;
     }
 
+
     public float getAvance() {
-        return Math.round((100.0f*100.0f*getVacunasParciales()+getVacunasCompletas())/poblacion)/100.0f;
+        float aux = 100.0f*(getVacunasCompletas()+getVacunasParciales())/poblacion;
+        return Math.round(100.0f*aux)/100.0f;
     }
 
     public float getCobertura() {

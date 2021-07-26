@@ -27,12 +27,4 @@ public class CentroVacunacion {
     public boolean getDarBaja() {
         return baja;
     }
-
-    public int getVacunasParciales() {
-        return vacunasParciales;
-    }
-    
-    public int getVacunasCompletas() {
-        return vacunasCompletas;
-    }
 }
