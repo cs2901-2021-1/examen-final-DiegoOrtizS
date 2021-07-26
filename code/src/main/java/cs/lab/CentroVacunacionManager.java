@@ -36,7 +36,7 @@ public class CentroVacunacionManager {
     }
 
     public int getCont() {
-        return idCont;
+        return idCont-1;
     }
 
     public void aumentarVacunasParciales(int nuevos) {

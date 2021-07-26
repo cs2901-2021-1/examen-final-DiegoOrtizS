@@ -26,6 +26,13 @@ public class ApplicationTest
         Assert.assertEquals(user.getPorcentaje("60 a 69"), 9.68f);
         Assert.assertEquals(user.getPorcentaje("70 a 79"), 5.55f);
         Assert.assertEquals(user.getPorcentaje("80 a mas"), 2.82f);
+        user.addNuevoCentro(10000, 20000);
+        user.darDeBaja(1);
+        user.darDeAlta(1);
+        Assert.assertEquals(CentroVacunacionManager.getInstance().getCont(), 1);
+        Assert.assertEquals(CentroVacunacionManager.getInstance().getVacunasParciales(), 10000);
+        Assert.assertEquals(CentroVacunacionManager.getInstance().getVacunasCompletas(), 20000);
+
         Assert.assertTrue(user.logout());
     }
 }
