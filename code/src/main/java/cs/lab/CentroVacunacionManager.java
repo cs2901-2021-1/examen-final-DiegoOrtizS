@@ -27,7 +27,8 @@ public class CentroVacunacionManager {
     }
 
     public void addNuevoCentro(int vacunasParciales, int vacunasCompletas) {
-        centrosDeVacunacion.put(idCont++, new CentroVacunacion(vacunasParciales, vacunasCompletas));
+        if (getCont() < 50)
+            centrosDeVacunacion.put(idCont++, new CentroVacunacion(vacunasParciales, vacunasCompletas));
     }
 
     public CentroVacunacion getCentroById(int id) {
